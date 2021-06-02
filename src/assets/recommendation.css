@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.recommendations-page {
+    background-color: #f6f6f6;
+    padding: 2rem 1rem;
+}
+
+.recommendations-page .header {
+    height: 4rem;
+    background-color: #10B981;
+    background-color:blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu svg {
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+
+.menu .menu-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .25rem 0;
+    background-color: white;
+    z-index: 100;
+    border: solid 1px #D1D5DB;
+    border-radius: .25rem;
+    transform: translateX(-100%);
+}
+
+.menu .menu-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu .menu-items ul a{
+    color: #374151;
+}
+
+.menu .menu-items ul a:hover{
+    text-decoration: none;
+}
+
+
+.menu .menu-items ul li {
+    line-height: 2rem;
+    padding: 0 1.5rem;
+}
+
+.menu .menu-items ul li:hover {
+    background-color: #D1D5DB;
+}
+
+.recommendations-page .header h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.recommendations-page .header .menu-burger {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+}
+.recommendations-page .recieved, .recommendations-page div.send {
+    margin-top: 2rem;
+    background-color: white;
+    border: solid 1px #D1D5DB;
+    padding: 1rem 2rem;
+}
+
+.recommendations-page  .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommendations-page  .head h4 {
+    font-size: 1.5rem;
+    color: #374151;
+}
+.recommendations-page  .head .icon{
+    font-size: 1.5rem;
+}
+
+.recommendations-page  .head .num-recommendations {
+    position: relative;
+    color: blue;
+}
+
+.recommendations-page  .head .num-recommendations span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(40%,-40%);
+    height: max-content;
+    padding: 0 12.5%;
+    width: max-content;
+    border: solid 2px blue;
+    border-radius: 100%;
+    z-index: 50;
+    font-weight: 600;
+    color: blue;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.recommendations-page .send .wrapper {
+    padding: 2px;
+    background: linear-gradient(90deg,#3F5EFB 0%, #FC466B 100%);
+    max-width: max-content;
+}
+
+.recommendations-page .send .search-bar {
+    display: flex;
+    padding: .5rem 1rem;
+    width: 20rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    background-color: white;
+    color : #FC466B;
+}
+
+.recommendations-page .send .search-bar input {
+    background: transparent;
+    border: none;
+    border-left: solid 1.5px #3F5EFB;
+    border-radius: 0;
+    height: 1.2rem;
+    width: 100%;
+    color: #374151;
+    padding: 0 .5rem;
+    font-size: .875rem;
+}
+.recommendations-page .send .search-bar input:focus {
+    outline: none;
+}
+
+.recommendation-your-requests {
+    margin-top: 2rem;
+}

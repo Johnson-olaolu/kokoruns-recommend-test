@@ -1,0 +1,68 @@
+tr.send {
+    border-bottom: solid 1px #E5E7EB;
+}
+
+tr.send td {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+}
+
+tr.send .info img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+}
+
+tr.send .info > div div {
+    margin-left: 1.25rem;
+}
+tr.send .info .name,
+tr.send .job .description {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+tr.send .info .email,
+tr.send .job .company {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+tr.send .status span {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    background-color: #D1FAE5;
+    color: #065F46;
+    line-height: 1.25rem;
+    border-radius: 9999px;
+}
+
+tr.send .action .view {
+    padding: 0.25rem 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    border: solid 2px blue;
+    margin-right: 1rem;
+}
+
+
+
+tr.send .action .recommend {
+    padding: 0.25rem 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    color: blue;
+    border: solid 2px blue;
+}
+
+
+
+tr.send .action a:hover {
+    text-decoration: none;
+}

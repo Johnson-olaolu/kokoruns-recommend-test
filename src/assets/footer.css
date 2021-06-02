@@ -1,0 +1,18 @@
+.footer-container {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.footer-container img {
+    height: 2rem;
+}
+
+.footer-container .menu  a{
+    margin-left: .5rem;
+    font-weight: 600;
+    font-size: .875rem;
+}

@@ -1,0 +1,98 @@
+tr.table-row {
+    border-bottom: solid 1px #E5E7EB;
+}
+
+tr.table-row td {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+}
+
+tr.table-row .info img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+}
+
+tr.table-row .info > div div {
+    margin-left: 1.25rem;
+}
+tr.table-row .info .name,
+tr.table-row .job .description {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+tr.table-row .info .email,
+tr.table-row .job .company {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+tr.table-row .status span.recommended {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    background-color: #D1FAE5;
+    color: #065F46;
+    line-height: 1.25rem;
+    border-radius: 9999px;
+}
+
+tr.table-row .status span.pending {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    line-height: 1.25rem;
+    border-radius: 9999px;
+}
+
+tr.table-row .status span.rejected {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    background-color: #fca5a5;
+    color: #ef4444;
+    line-height: 1.25rem;
+    border-radius: 9999px;
+}
+
+tr.table-row .action .view {
+    padding: 0.25rem 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    border: solid 2px blue;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+tr.table-row .action .cancel {
+    padding: 0.25rem 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    background-color: red;
+    color: white;
+    border: solid 2px red;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+tr.table-row .action .recommend {
+    padding: 0.25rem 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+    color: blue;
+    border: solid 2px blue;
+    background-color: white;
+    cursor: pointer;
+}
+
+tr.table-row .action button:focus {
+    outline: none;
+}
+
+

@@ -1,0 +1,438 @@
+.modal-background {
+    background-color: rgba(0, 0, 0, .5);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rmodal-title {
+    height: 2.5rem;
+    background-color: blue;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.rmodal-title h5 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.rmodal-body {
+    background-color: white;
+    padding: 1.5rem;
+}
+
+.rmodal-body .user-details {    
+    display: flex;
+    align-items: center;
+}
+
+.rmodal-body .user-details img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.rmodal-body .user-info {
+    padding-left: 1rem;
+}
+
+.rmodal-body .user-info h4 {
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.5rem;
+}
+.rmodal-body .user-info .occupation {
+    font-weight: 400;
+}
+
+.rmodal-body .user-info .occupation img {
+    height: 2rem;
+}
+
+.rmodal-body .user-message {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rmodal-body .user-message .message {
+    padding-right: 1rem;
+}
+
+.rmodal-body .user-message .message label {
+    font-size: small;
+    color: #6B7280;
+    display: block;
+}
+
+.rmodal-body .user-message .message textarea {
+    border:  1px solid #D1D5DB;
+    color :#374151;
+    font-size: .875rem;
+    resize: none;
+    height: 80%;
+    width: 17.5rem;
+    padding: 0.5rem;
+}
+
+.rmodal-body .user-message .message textarea:focus {
+    outline: none;
+}
+
+.rmodal-body .impression {
+    padding: 0 1rem;
+} 
+
+
+.rmodal-body .impression > div {
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+
+
+/******************************************************************************************************************/
+.slider-container {
+    width: 100%;
+    width: 300px;
+    
+}
+
+.slider {
+    height: 25px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;   
+}
+
+.slider::before {
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    width: calc(100% * (9 / 10));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #6B7280;
+}
+
+.slider label {
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    height: 100%;
+}
+
+.slider label::before {
+    content: attr(data-ranking);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+    color: #6B7280;;
+}
+
+.slider label::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #6B7280;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    box-sizing: content-box;
+}
+
+.slider label:hover::after {
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+.slider input {
+    display: none;
+}
+
+.slider input:checked+label::before {
+    font-weight: 600;
+    opacity: 1;
+}
+
+.slider input:checked+label::after {
+    border-width: 4px;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.slider input:checked~.position {
+    opacity: 1;
+}
+
+.slider input:checked:nth-child(1)~.position {
+    left: 5%;
+}
+
+.slider input:checked:nth-child(3)~.position {
+    left: 15%;
+}
+
+.slider input:checked:nth-child(5)~.position {
+    left: 25%;
+}
+
+.slider input:checked:nth-child(7)~.position {
+    left: 35%;
+}
+
+.slider input:checked:nth-child(9)~.position {
+    left: 45%;
+}
+
+.slider input:checked:nth-child(11)~.position {
+    left: 55%;
+}
+
+.slider input:checked:nth-child(13)~.position {
+    left: 65%;
+}
+
+.slider input:checked:nth-child(15)~.position {
+    left: 75%;
+}
+
+.slider input:checked:nth-child(17)~.position {
+    left: 85%;
+}
+
+.slider input:checked:nth-child(19)~.position {
+    left: 95%;
+}
+
+.slider .position {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: #6B7280;
+    border-radius: 50%;
+    transition: all 0.15s ease-in-out;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    opacity: 0;
+    z-index: 2;
+    box-sizing: content-box;
+}
+
+.slider input+label::before {
+    transform: translate(-50%, 10px) scale(0.9);
+    transition: all 0.15s linear;
+}
+
+.slider input:checked+label::before {
+    transform: translate(-50%, 10px) scale(1.1);
+    transition: all 0.15s linear;
+}
+
+/******************************************************************************************************************/
+
+
+.send-modal .rmodal-body div {
+    margin-bottom: 0.5rem;
+}
+
+.send-modal .rmodal-body .select-submit {
+    margin-bottom: 0 ;
+}
+
+.rmodal-body h6 {
+    font-size: small;
+    font-weight: 400;
+    color: #6B7280;
+    margin: 0;
+    padding: 0;
+    margin-bottom: .5rem;
+}
+
+.rmodal-body label {
+    display: block;
+    font-size: small;
+    font-weight: 400;
+    color: #6B7280;
+    margin: 0;
+    padding: 0;
+    margin-bottom: .5rem;
+}
+
+.rmodal-body .select-title >div {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 10rem;
+    border-radius: 2px;
+    border: 1px solid #D1D5DB;
+}
+
+.rmodal-body .select-title div .title-select {
+    font-size:  1rem;
+    color: #6B7280;
+    padding: 0.25rem .5rem;
+    margin: 0;
+    width: 100%;
+}
+
+.rmodal-body .select-title div .icon {
+    font-size: 1rem;
+    background-color: #F9FAFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6B7280;
+    padding: 0 .75rem;
+    width: max-content;
+    height: 2rem;
+    margin: 0;
+    border-left: 1px solid #D1D5DB;
+    cursor: pointer;
+}
+
+
+.rmodal-body .select-title .title-menu {
+    position: absolute;
+    padding: .25rem 0;
+    display: block;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(.25rem);
+    background-color: white;
+    border: solid 1px #F3F4F6;
+    box-shadow: 2px 2px 3px 0px #F3F4F6;
+    margin-top: .25px;
+}
+
+.rmodal-body .select-title .title-menu span {
+    display: block;
+    font-size: small;
+    color: #374151;
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+.rmodal-body .select-title .title-menu span:hover {
+    background-color: #F3F4F6;
+}
+
+.rmodal-body input {
+    border: solid 1px #D1D5DB;
+    color: #6B7280;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+}
+
+
+.rmodal-body h6.text-output {
+    border: solid 1px #D1D5DB;
+    color: #6B7280;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.rmodal-body input:focus {
+    outline: none;
+}
+
+.rmodal-body .select-name input{  
+    width: 75%;
+}
+
+.rmodal-body .select-position input{  
+    width: 15rem;
+    margin-right: 2rem;
+}
+
+.rmodal-body .select-message textarea {
+    width: 100%;
+    height: 7.5rem;
+    border: solid 1px #D1D5DB;
+    color :#374151;
+    font-size: .875rem;
+    resize: none;
+    padding: 0.5rem;
+    
+}
+
+.rmodal-body .select-message textarea:focus {
+    outline: none;
+}
+
+/*********************************************************************************************************/
+
+
+.rmodal-body .request-details {    
+    display: flex;
+    align-items: center;
+}
+
+.rmodal-body .request-details img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.rmodal-body .user-request-info {
+    padding-left: 1rem;
+}
+
+.rmodal-body .user-request-info h4 {
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.5rem;
+}
+.rmodal-body .user-request-info .occupation {
+    font-weight: 400;
+}
+
+.rmodal-body .user-request-info .occupation img {
+    height: 2rem;
+}
+
+.rmodal-body .user-request-message {
+    margin-top: 1rem;
+}
+
+.rmodal-body .user-request-message div.text-output {
+    border:  1px solid #D1D5DB;
+    color :#374151;
+    font-size: .875rem;
+    height: 7.5rem;
+    width: 24rem;
+    padding: 0.5rem;
+}

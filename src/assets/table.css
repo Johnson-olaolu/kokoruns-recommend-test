@@ -1,0 +1,35 @@
+.recommendation-request {
+    margin-top: 1rem;
+    overflow: auto;
+    max-height: 25rem;
+}
+
+.recommendation-send {
+    margin-top: 1rem;
+    overflow: auto;
+    max-height: 25rem;
+}
+
+
+.recommendation-table {
+    min-width: 100%;
+    border-radius: 2rem;
+}
+
+.recommendation-table thead {
+    background-color: #F9FAFB;
+    border-bottom: solid 1px #E5E7EB;
+}
+
+.recommendation-table thead  th{
+    padding: .75rem 1.5rem;
+    text-align: left;
+    font-size: small;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #6B7280;
+    position: sticky;
+    top: 0;
+    background-color: #F9FAFB;
+}
