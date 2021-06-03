@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../assets/tablerow.css'
+import { ModalId, ModalType } from '../ModalType'
 
 const Send = ( { sentRecommendationRequest }) => {
+    const { modalTypeText, setModalTypeText } = useContext(ModalType)
+    const {modalIDText, setModalIDText} = useContext(ModalId)
+    const onClickCancel = () => { 
+        document.querySelector(".modal-background").classList.remove("d-none")
+        document.querySelector("body").style.overflowY = "hidden"
+        window.scrollTo(0,0)
+        setModalTypeText("sent request")
+        setModalIDText(sentRecommendationRequest.id)  
+    }
 
     return (
         <tr className = "table-row">
@@ -34,7 +44,7 @@ const Send = ( { sentRecommendationRequest }) => {
             })()
         }</td>
         <td className = "action">
-            <a href="" className="cancel">Cancel Request</a>
+            <button onClick = {onClickCancel} className="cancel">Cancel Request</button>
         </td>
     </tr>
     )

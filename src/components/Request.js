@@ -9,7 +9,7 @@ const Request = ({ recievedRecommendationRequest }) => {
     const onClickViewRequest = () =>{
         document.querySelector(".modal-background").classList.remove("d-none")
         document.querySelector("body").style.overflowY = "hidden"
-        window.scrollTo(0,0)
+        //window.scrollTo(0,0)
         setModalTypeText("view request")
         setModalIDText(recievedRecommendationRequest.id)
     }

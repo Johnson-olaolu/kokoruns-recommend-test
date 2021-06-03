@@ -11,8 +11,7 @@ body {
 
 .recommendations-page .header {
     height: 4rem;
-    background-color: #10B981;
-    background-color:blue;
+    background-color: #5f9ea0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +96,7 @@ body {
 
 .recommendations-page  .head .num-recommendations {
     position: relative;
-    color: blue;
+    color: #5f9ea0;
 }
 
 .recommendations-page  .head .num-recommendations span {
@@ -108,11 +107,11 @@ body {
     height: max-content;
     padding: 0 12.5%;
     width: max-content;
-    border: solid 2px blue;
+    border: solid 2px #5f9ea0;
     border-radius: 100%;
     z-index: 50;
     font-weight: 600;
-    color: blue;
+    color: #5f9ea0;
     font-size: smaller;
     display: flex;
     justify-content: center;

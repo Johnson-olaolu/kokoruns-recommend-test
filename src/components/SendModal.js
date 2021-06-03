@@ -1,4 +1,4 @@
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -10,10 +10,16 @@ const SendModal = () => {
         document.querySelector(".select-title .title-select").innerText = e.target.innerText
         document.querySelector(".select-title .title-menu").classList.add("d-none")
     }
+
+    const closeModal = () => {
+        document.querySelector(".modal-background").classList.add("d-none")
+        document.querySelector("body").style.overflowY = "auto"
+    }
     return (
         <div className="send-modal">
             <div className="rmodal-title">
                 <h5>Send Request</h5>
+                <FontAwesomeIcon onClick = {closeModal} icon = {faTimes}/>
             </div>
             <div className="rmodal-body">
                 <div className="select-title">

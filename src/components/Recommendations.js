@@ -33,23 +33,24 @@ const Recommendations = () => {
                     Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
                 }
             }).then(res => {
-                //console.log(res)
-                setRecommendationData(res.data)
+                console.log(res.data)
+                setRecommendationData(res.data.data)
             }).catch(err => {
                 console.error(err)
             })
             //setRecommendationData(getRecommendation)
-            console.log(user)
+            //console.log(user)
         }
-        
-    }, [ user, loggedIn]);
+        //setRecommendationData(getRecommendation)
+    },[user, loggedIn]);
 
-    if(loggedIn !== true) {
+    if(loggedIn !== true ) {
         return (
-             <Redirect to ="/login"/>
+             <Redirect to ="/"/> 
         )
     }
 
+    
     const postRecommendationRequestFunction = (reciver_id, sender_id, relationship_position, relationship) => {
         axios
             .post("https://kokoruns-api.herokuapp.com/api/user/recommendation/request", {
@@ -83,50 +84,58 @@ const Recommendations = () => {
     }
 
     const rejectRecommendationRequestFunction = (id) => {
-        axios
-            .patch(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/reject/:${id}`)
+        axios.patch(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/reject/${id}`,
+            {headers: {
+                Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
+            }})
             .then(res => {
                 console.log(res.data)
+            })
+            .catch(err => {
+                console.error(err)
             })
     }
 
     const cancelRecommendationRequestFunction = (id) => {
-        axios
-            .delete(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/cancel/:${id}`)
+        axios.delete(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/cancel/${id}`,
+            {headers: {
+                Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
+            }})
             .then(res => {
                 console.log(res.data)
+            })
+            .catch(err => {
+                console.error(err)
             })
     }
 
     const viewRecommendationRequestFunction = (id) => {
-        axios
-            .get(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/:${id}`)
+        axios.get(`https://kokoruns-api.herokuapp.com/api/user/recommendation/request/${id}`,
+        {headers: {
+            Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
+        }})
             .then(res => {
                 console.log(res.data);
             })
+            .catch(err => {
+                console.error(err)
+            })
     }
-
-    document
-        .addEventListener('click', function (e) {
+    /*
+    document.addEventListener('click', function (e) {
             if (e.target !== document.querySelector(".menu-items") && document.querySelector(".menu-items").contains(e.target) === false) {
                 if (e.target === document.querySelector(".menu-burger") || document.querySelector(".menu-burger").contains(e.target) !== false) {
-                    document
-                        .querySelector(".menu-items")
-                        .classList
-                        .toggle("hidden")
+                    document.querySelector(".menu-items").classList.toggle("hidden")
                 } else {
-                    document
-                        .querySelector(".menu-items")
-                        .classList
-                        .add("hidden")
+                    document.querySelector(".menu-items").classList.add("hidden")
                 }
 
             }
 
         })
-
+        */
     const burgerClick = () => {
-        //document.querySelector(".menu-items").classList.toggle("hidden")
+        document.querySelector(".menu-items").classList.toggle("hidden")
     }
 
     return (
@@ -199,13 +208,13 @@ const Recommendations = () => {
                             <h4>Received Requests</h4>
                             <div className="num-recommendations">
                                 <FontAwesomeIcon className="icon" icon={faMailBulk}/>
-                                <span>{recommendationData.data.received_count}</span>
+                                <span>{recommendationData.received_count}</span>
                             </div>
                         </div>
-                        {recommendationData.data.received_count > 0
+                        {recommendationData.received_count > 0
                             ? <RecommendationRequest
                                     postRecommendationRequestFunction={postRecommendationRequestFunction}
-                                    receivedRecommendationRequests={recommendationData.data.received_recommendation_requests}/>
+                                    receivedRecommendationRequests={recommendationData.received_recommendation_requests}/>
                             : <span>No Request Found</span>}
                     </div>
 
@@ -239,21 +248,21 @@ const Recommendations = () => {
                                 <h4>Your Requests</h4>
                                 <div className="num-recommendations">
                                     <FontAwesomeIcon className="icon" icon={faMailBulk}/>
-                                    <span>{recommendationData.data.sent_count}</span>
+                                    <span>{recommendationData.sent_count}</span>
                                 </div>
                             </div>
-                            {recommendationData.data.sent_count > 0
+                            {recommendationData.sent_count > 0
                                 ? <RecommendationSend
-                                        sentRecommendationRequests={recommendationData.data.sent_recommendation_requests}/>
+                                        sentRecommendationRequests={recommendationData.sent_recommendation_requests}/>
                                 : <span>No Request Found</span>}
                         </section>
 
                     </div>
-                    <Modal getRecommendationData={getRecommendation.data}
+                    <Modal getRecommendationData={recommendationData}
                     viewRecommendationRequestFunction = {viewRecommendationRequestFunction}
                     rejectRecommendationRequestFunction = {rejectRecommendationRequestFunction}
                     acceptRecommendationRequestFunction = {acceptRecommendationRequestFunction}
-                    cancelRecommendationRequestFunction = {rejectRecommendationRequestFunction}/>
+                    cancelRecommendationRequestFunction = {cancelRecommendationRequestFunction}/>
                 </main>
             </ModalId.Provider>
         </ModalType.Provider>

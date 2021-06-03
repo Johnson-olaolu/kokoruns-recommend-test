@@ -1,3 +1,5 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
@@ -35,6 +37,11 @@ const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
     const onPunctualityChange = (e) => {
         var {name , value} = e.target
         setPunctuality(value)
+    }
+
+    const closeModal = () => {
+        document.querySelector(".modal-background").classList.add("d-none")
+        document.querySelector("body").style.overflowY = "auto"
     }
     
     const onClickRecommend = ()=>{
@@ -76,6 +83,7 @@ const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
         <div className="request-modal">
             <div className="rmodal-title">
                 <h5>View Request</h5>
+                <FontAwesomeIcon onClick = {closeModal} icon = {faTimes}/>
             </div>
             <div className="rmodal-body">
                 <div className="user-details">

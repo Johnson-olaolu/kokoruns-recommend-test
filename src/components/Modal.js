@@ -21,7 +21,7 @@ const Modal = ( props ) => {
                 {(() => {
                     if (modalTypeText === "view request") {
                         return (
-                          <ViewModal   RequestId = {modalIDText} RequestData = {props.getRecommendationData.received_recommendation_requests}/>
+                          <ViewModal type = "reject" RejectFunction = {props.rejectRecommendationRequestFunction}  RequestId = {modalIDText} RequestData = {props.getRecommendationData.received_recommendation_requests}/>
                         )
                     } else if (modalTypeText === "recommend") {
                         return (
@@ -30,6 +30,10 @@ const Modal = ( props ) => {
                     } else if (modalTypeText === "send request") {
                         return (
                           <SendModal />
+                        )
+                    } else if (modalTypeText === "sent request") {
+                        return (
+                            <ViewModal type = "cancel" CancelFunction = {props.cancelRecommendationRequestFunction}  RequestId = {modalIDText} RequestData = {props.getRecommendationData.sent_recommendation_requests}/>
                         )
                     }
                 })()}
