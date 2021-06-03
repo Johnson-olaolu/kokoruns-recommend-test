@@ -7,7 +7,6 @@ import RecommendationRequest from './RecommendationRequest'
 import RecommendationSearch from './RecommendationSearch'
 import RecommendationSend from './RecommendationSend'
 
-import getRecommendation from '../json/getRecommendation'
 import {UserContext, UserLoggedIn} from '../User'
 import axios from 'axios'
 import {ModalId, ModalType} from '../ModalType'
@@ -24,25 +23,25 @@ const Recommendations = () => {
     const [modalIDText, setModalIDText] = useState(ModalId)
     
     
-
+    const getRecommendationDataFunction = () =>{
+        axios.get(`https://kokoruns-api.herokuapp.com/api/user/recommendations?user_id=${user.user.user_id}`, {
+            headers: {
+                Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
+            }
+        }).then(res => {
+            console.log(res.data)
+            setRecommendationData(res.data.data)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
     useEffect(() => {
         //console.log({user: user.user.user_id, token : user.access_token})
         if(loggedIn === true) {
-            axios.get(`/user/recommendations?user_id=${user.user.user_id}`, {
-                headers: {
-                    Authorization: 'Bearer ' + user.access_token //the token is a variable which holds the token
-                }
-            }).then(res => {
-                console.log(res.data)
-                setRecommendationData(res.data.data)
-            }).catch(err => {
-                console.error(err)
-            })
-            //setRecommendationData(getRecommendation)
-            //console.log(user)
+            getRecommendationDataFunction()
+            
         }
-        //setRecommendationData(getRecommendation)
-    },[user, loggedIn]);
+    });
 
     if(loggedIn !== true ) {
         return (
@@ -77,6 +76,7 @@ const Recommendations = () => {
             }} )
             .then(res => {
                 console.log(res.data)
+                getRecommendationDataFunction()
             })
             .catch(err => {
                 console.error(err)
@@ -90,6 +90,7 @@ const Recommendations = () => {
             }})
             .then(res => {
                 console.log(res.data)
+                getRecommendationDataFunction()
             })
             .catch(err => {
                 console.error(err)
@@ -103,10 +104,12 @@ const Recommendations = () => {
             }})
             .then(res => {
                 console.log(res.data)
+                getRecommendationDataFunction()
             })
             .catch(err => {
                 console.error(err)
             })
+
     }
 
     const viewRecommendationRequestFunction = (id) => {
@@ -116,6 +119,7 @@ const Recommendations = () => {
         }})
             .then(res => {
                 console.log(res.data);
+                getRecommendationDataFunction()
             })
             .catch(err => {
                 console.error(err)

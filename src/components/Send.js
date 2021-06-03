@@ -44,7 +44,7 @@ const Send = ( { sentRecommendationRequest }) => {
             })()
         }</td>
         <td className = "action">
-            <button onClick = {onClickCancel} className="cancel">Cancel Request</button>
+            <button onClick = {onClickCancel} className="cancel bg-danger">Cancel Request</button>
         </td>
     </tr>
     )

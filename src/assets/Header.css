@@ -21,7 +21,7 @@ position: relative;
 }
 
 .header-container .search-bar {
-    background: linear-gradient(90deg,#3F5EFB 0%, #FC466B 100%);
+    background: linear-gradient(90deg,#007bff 0%, #dc3545 100%);
     display: flex;
     width : 45rem;
     height: 2.5rem;
