@@ -1,11 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { UserContext, UserLoggedIn } from '../User';
+import { UserContext, UserLoggedIn } from '../../User';
 import { useHistory } from 'react-router-dom'
 var axios = require('axios');
 
 const Login = () => {
-    const {user , setUser} = useContext(UserContext)
-    const {loggedIn, setLoggedIn} = useContext(UserLoggedIn)
     let history =useHistory()
 
     const [email, setEmail] = useState("")
@@ -26,14 +24,14 @@ const Login = () => {
         //console.log({email , password})
         axios.post("https://kokoruns-api.herokuapp.com/api/auth/login", {email : email, pass_word: password})
             .then(res => {
-                console.log(res.data)
-                setUser(res.data)
-                setLoggedIn(true)
+                //console.log(res.data)
+                var data = JSON.stringify(res.data)
+                localStorage.setItem('user', data)
+                localStorage.setItem('loggedIn', true)
                 history.push("/recommendation")
             })
             .catch(err => {
                 console.error(err)
-                setLoggedIn(false)
             })
     }
 

@@ -298,24 +298,24 @@
     margin-bottom: .5rem;
 }
 
-.rmodal-body .select-title >div {
+.rmodal-body .select-relationship >div {
     display: flex;
     align-items: center;
     position: relative;
-    width: 10rem;
+    width: 12rem;
     border-radius: 2px;
     border: 1px solid #D1D5DB;
 }
 
-.rmodal-body .select-title div .title-select {
-    font-size:  1rem;
+.rmodal-body .select-relationship div .relationship-select {
+    font-size:  .875rem;
     color: #6B7280;
     padding: 0.25rem .5rem;
     margin: 0;
     width: 100%;
 }
 
-.rmodal-body .select-title div .icon {
+.rmodal-body .select-relationship div .icon {
     font-size: 1rem;
     background-color: #F9FAFB;
     display: flex;
@@ -331,7 +331,7 @@
 }
 
 
-.rmodal-body .select-title .title-menu {
+.rmodal-body .select-relationship .relationship-menu {
     position: absolute;
     padding: .25rem 0;
     display: block;
@@ -345,15 +345,19 @@
     margin-top: .25px;
 }
 
-.rmodal-body .select-title .title-menu span {
+.rmodal-body .select-relationship .relationship-menu span {
     display: block;
-    font-size: small;
+    font-size: .875rem;
     color: #374151;
-    padding: 0 .5rem;
+    padding: .125rem .5rem;
     cursor: pointer;
 }
 
-.rmodal-body .select-title .title-menu span:hover {
+.rmodal-body .select-relationship .relationship-menu span:hover {
+    background-color: #F9FAFB;
+}
+
+.rmodal-body .select-relationship .title-menu span:hover {
     background-color: #F3F4F6;
 }
 
@@ -442,4 +446,10 @@
     height: 7.5rem;
     width: 24rem;
     padding: 0.5rem;
+}
+
+.rmodal-body > h4 {
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.5rem;
 }

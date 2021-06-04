@@ -3,21 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
-    const [requestData, setRequestData] = useState({})
+const RequestModal = ( {modalData, removeModal, acceptFunction} ) => {
     const [message, setMessage] = useState("")
     const [impression, setImpression] = useState(0)
     const [punctuality, setPunctuality] = useState(0)
     const [integrity, setIntegrity] = useState(0)
 
-    useEffect(() => {
-        RequestData.forEach(request => {
-            console.log({request, RequestId})
-            if (request.id === RequestId){
-                setRequestData(request)              
-            }
-        }) 
-    }, [RequestData, RequestId])
 
     const onChangeMessage = (e) => {
         var {name , value} = e.target
@@ -39,18 +30,11 @@ const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
         setPunctuality(value)
     }
 
-    const closeModal = () => {
-        document.querySelector(".modal-background").classList.add("d-none")
-        document.querySelector("body").style.overflowY = "auto"
-    }
     
     const onClickRecommend = ()=>{
-        //RequestId
-        //recieverid = requestData.reciever_id
-        console.log(requestData)
         //console.log({reciever_id : requestData.receiver_id, impression, integrity, punctuality, message, RequestId})
         if (integrity !== 0 && punctuality !== 0 && impression !== 0 && message !== ""){
-            RecommendFunction(requestData.receiver_id, impression, integrity, punctuality, message, requestData.id)
+            acceptFunction(modalData.receiver_id, impression, integrity, punctuality, message, modalData.id)
         }else {
             var error_mes = ""
             if(integrity === 0) {
@@ -75,7 +59,6 @@ const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
             }
             alert(error_mes)
         }
-        //axios.patch(`/user/recommendation/request/accept/:${RequestId}`, {})
         
     }
 
@@ -83,18 +66,18 @@ const RequestModal = ( {RequestId, RequestData, RecommendFunction} ) => {
         <div className="request-modal">
             <div className="rmodal-title">
                 <h5>View Request</h5>
-                <FontAwesomeIcon onClick = {closeModal} icon = {faTimes}/>
+                <FontAwesomeIcon onClick = {removeModal} icon = {faTimes}/>
             </div>
             <div className="rmodal-body">
                 <div className="user-details">
                     <div>
                         <img
-                            src={requestData.sender_pic}
+                            src={modalData.sender_pic}
                             alt=""/>
                     </div>
                     <div className="user-info">
-                        <h4 className="name">{requestData.sender_name}</h4>
-                        <h4 className="occupation">{requestData.sender_job_title} at <a href=""> {requestData.sender_company}<img src="" alt=""/></a>
+                        <h4 className="name">{modalData.sender_name}</h4>
+                        <h4 className="occupation">{modalData.sender_job_title} at <a href=""> {modalData.sender_company}<img src="" alt=""/></a>
                         </h4>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react'
-import Send from './Send'
+import SentRequest from './SentRequest'
 
-const RecommendationSend = ( { sentRecommendationRequests }) => {
+const SentRequestSectionTable = ({ sentRequests }) => {
     return (
         <section className ="recommendation-request">
         <table class="recommendation-table">
@@ -15,9 +15,9 @@ const RecommendationSend = ( { sentRecommendationRequests }) => {
                 </tr>
             </thead>
             <tbody>
-                {sentRecommendationRequests.map(sentRecommendationRequest => {
+                {sentRequests.map(sentRequest => {
                     return (
-                        <Send key = {sentRecommendationRequest.id} sentRecommendationRequest = {sentRecommendationRequest}/>
+                        <SentRequest sentRequest = {sentRequest}/>
                     )
                 })}
             </tbody>
@@ -26,4 +26,4 @@ const RecommendationSend = ( { sentRecommendationRequests }) => {
     )
 }
 
-export default RecommendationSend
+export default SentRequestSectionTable

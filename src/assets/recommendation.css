@@ -74,7 +74,7 @@ body {
     width: 1.5rem;
     color: white;
 }
-.recommendations-page .recieved, .recommendations-page div.send {
+.recommendations-page .recieved, .recommendations-page section.send-request-section {
     margin-top: 2rem;
     background-color: white;
     border: solid 1px #D1D5DB;
@@ -119,13 +119,13 @@ body {
     background-color: white;
 }
 
-.recommendations-page .send .wrapper {
+.recommendations-page .send-request-section .wrapper {
     padding: 2px;
     background: linear-gradient(90deg,#007bff 0%, #dc3545 100%);
     max-width: max-content;
 }
 
-.recommendations-page .send .search-bar {
+.recommendations-page .send-request-section .search-bar {
     display: flex;
     padding: .5rem 1rem;
     width: 20rem;
@@ -136,7 +136,10 @@ body {
     color : #dc3545;
 }
 
-.recommendations-page .send .search-bar input {
+.recommendations-page .send-request-section .search-bar svg {
+    cursor: pointer;
+}
+.recommendations-page .send-request-section .search-bar input {
     background: transparent;
     border: none;
     border-left: solid 1.5px #3F5EFB;
@@ -145,9 +148,9 @@ body {
     width: 100%;
     color: #374151;
     padding: 0 .5rem;
-    font-size: .875rem;
+    font-size: 1rem;
 }
-.recommendations-page .send .search-bar input:focus {
+.recommendations-page .send-request-section .search-bar input:focus {
     outline: none;
 }
 
