@@ -8,10 +8,8 @@ import ViewRequestModal from './ViewRequestModal'
 import ViewSentModal from './ViewSentModal'
 
 const Modal = (props) => {
-    const [modalType,
-        setModalType] = useState("")
-    const [modalData,
-        setModalData] = useState({})
+    const [modalType, setModalType] = useState("")
+    const [modalData, setModalData] = useState({})
     const {showModal, setShowModal} = useContext(ModalShow)
 
     useEffect(() => {

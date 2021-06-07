@@ -5,18 +5,13 @@ import SearchResultsTable from './SearchResultsTable'
 
 const SearchSection = ( {searchResults, searchUsersFunction} ) => {
     const [searchText, setSearchText] = useState("")
-    //const searchResults = [1,2,3]
     const onChangeSearch = (e) => {
         const {name, value} = e.target
         setSearchText(value)
     }
-    const onClickSearch = () =>{
-        searchUsersFunction(searchText)
-    }
+    
     const onSearchInputKeyUp = (e) =>{
-        if(e.which === 13){
             searchUsersFunction(searchText)
-        }
     }
 
     return (
@@ -26,7 +21,7 @@ const SearchSection = ( {searchResults, searchUsersFunction} ) => {
                     <div className="wrapper">
                         <div className=" search-bar">
                             <input onKeyUp = {onSearchInputKeyUp}  onChange = {onChangeSearch} value = {searchText} type="text" placeholder="Search For Users..." className=""/>
-                            <FontAwesomeIcon onClick={onClickSearch} icon={faSearch}/>
+                            <FontAwesomeIcon  icon={faSearch}/>
                         </div>
                     </div>
                 </div>
