@@ -25,6 +25,7 @@ body {
 .menu svg {
     cursor: pointer;
 }
+
 .hidden {
     display: none;
 }
@@ -46,11 +47,12 @@ body {
     margin: 0;
     padding: 0;
 }
-.menu .menu-items ul a{
+
+.menu .menu-items ul a {
     color: #374151;
 }
 
-.menu .menu-items ul a:hover{
+.menu .menu-items ul a:hover {
     text-decoration: none;
 }
 
@@ -74,36 +76,39 @@ body {
     width: 1.5rem;
     color: white;
 }
-.recommendations-page .recieved, .recommendations-page section.send-request-section {
+
+.recommendations-page .recieved,
+.recommendations-page section.send-request-section {
     margin-top: 2rem;
     background-color: white;
     border: solid 1px #D1D5DB;
     padding: 1rem 2rem;
 }
 
-.recommendations-page  .head {
+.recommendations-page .head {
     display: flex;
     justify-content: space-between;
 }
 
-.recommendations-page  .head h4 {
+.recommendations-page .head h4 {
     font-size: 1.5rem;
     color: #374151;
 }
-.recommendations-page  .head .icon{
+
+.recommendations-page .head .icon {
     font-size: 1.5rem;
 }
 
-.recommendations-page  .head .num-recommendations {
+.recommendations-page .head .num-recommendations {
     position: relative;
     color: #5f9ea0;
 }
 
-.recommendations-page  .head .num-recommendations span {
+.recommendations-page .head .num-recommendations span {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(40%,-40%);
+    transform: translate(40%, -40%);
     height: max-content;
     padding: 0 12.5%;
     width: max-content;
@@ -121,7 +126,7 @@ body {
 
 .recommendations-page .send-request-section .wrapper {
     padding: 2px;
-    background: linear-gradient(90deg,#007bff 0%, #dc3545 100%);
+    background: linear-gradient(90deg, #007bff 0%, #dc3545 100%);
     max-width: max-content;
 }
 
@@ -133,12 +138,13 @@ body {
     align-items: center;
     font-size: 1rem;
     background-color: white;
-    color : #dc3545;
+    color: #dc3545;
 }
 
 .recommendations-page .send-request-section .search-bar svg {
     cursor: pointer;
 }
+
 .recommendations-page .send-request-section .search-bar input {
     background: transparent;
     border: none;
@@ -150,8 +156,59 @@ body {
     padding: 0 .5rem;
     font-size: 1rem;
 }
+
 .recommendations-page .send-request-section .search-bar input:focus {
     outline: none;
+}
+
+.recommendations-page .recommendation-search-bar-section {
+    position: relative;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar {
+    position: absolute;
+    margin-top: .5rem;
+    top: 100%;
+    left: 0;
+    max-height: 10rem;
+    overflow: hidden;
+    background-color: white;
+    border: solid 1px #F3F4F6;
+    box-shadow: 2px 2px 3px 0px #F3F4F6;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar  img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+    pointer-events: none;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar  > div div {
+    margin-left: 1.25rem;
+    pointer-events: none;
+}
+.recommendations-page .recommendation-search .search-reults-bar  .name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar .email {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6B7280;
+    margin: 0;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar >div {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.recommendations-page .recommendation-search .search-reults-bar >div:hover {
+    background-color: #F9FAFB;
 }
 
 .recommendation-your-requests {
